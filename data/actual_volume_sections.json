@@ -1,0 +1,24 @@
+{
+  "volume_sha256": "582877deefccb139c421355a2798b49ecc5c019a09b752ab72aacdf52278abac",
+  "model_sha256": "a616dae5f71b378cc4cd24ba0e4353d856013406f0313640d2ec9e126734b9b8",
+  "centerline_sha256": "21737e3c5340e4fc7005635328818c768334373257d384d62fd2097256d434f6",
+  "spacing_m": 0.004,
+  "trim_m": 0.015,
+  "branch_exclusion_m": 0.018,
+  "source_dt_s": 0.000937,
+  "period_s": 0.937,
+  "source_steps": [
+    10040,
+    11040,
+    5
+  ],
+  "units": {
+    "length": 0.01,
+    "velocity": 0.01,
+    "pressure": 0.1,
+    "shear": 0.1
+  },
+  "wall_probe_depth_m": 0.0003,
+  "kinematic_viscosity_m2_s": 3.7735849056603773e-06,
+  "source_url": "https://www.vascularmodel.com/svresults/0012_H_AO_H/0012_H_AO_H_3D_RIGID_VTU.zip"
+}

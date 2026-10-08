@@ -1,0 +1,8 @@
+{
+  "surface_sha256": "a616dae5f71b378cc4cd24ba0e4353d856013406f0313640d2ec9e126734b9b8",
+  "length_scale": 0.01,
+  "decimation": 0.8,
+  "smoothing_iterations": 30,
+  "smoothing_factor": 0.1,
+  "seed_method": "profileidlist"
+}

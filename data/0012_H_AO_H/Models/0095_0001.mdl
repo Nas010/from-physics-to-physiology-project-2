@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<format version="1.0" />
+<model type="PolyData">
+    <timestep id="0">
+        <model_element type="PolyData" num_sampling="0">
+            <faces>
+                <face id="1" name="wall" type="wall" color1="0.0" color2="0.0" color3="0.5" visible="true" opacity="1" />
+                <face id="2" name="inflow" type="cap" color1="0.0" color2="0.3" color3="1.0" visible="true" opacity="1" />
+                <face id="3" name="btrunk" type="cap" color1="0.16129032258064513" color2="1.0" color3="0.8064516129032259" visible="true" opacity="1" />
+                <face id="5" name="carotid" type="cap" color1="0.8064516129032256" color2="1.0" color3="0.16129032258064513" visible="true" opacity="1" />
+                <face id="6" name="subclavian" type="cap" color1="1.0" color2="0.40740740740740755" color3="0.0" visible="true" opacity="1" />
+                <face id="7" name="outflow" type="cap" color1="0.5" color2="0.0" color3="0.0" visible="true" opacity="1" />
+            </faces>
+            <blend_radii />
+            <blend_param blend_iters="2" sub_blend_iters="3" cstr_smooth_iters="2" lap_smooth_iters="50" subdivision_iters="1" decimation="0.01" />
+        </model_element>
+    </timestep>
+</model>

@@ -1,0 +1,7 @@
+assumption,actual_status
+A1,measured volume
+A2,measured volume
+A3,measured volume
+A4,surface WSS magnitude comparison; signed volume force only if volume enabled
+A5,actual global cap balance; local inferred rigid flux; volume local balance if enabled
+A6,measured volume

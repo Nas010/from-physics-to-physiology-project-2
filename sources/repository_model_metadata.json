@@ -1,0 +1,82 @@
+{
+  "retrieved_date": "2026-10-06",
+  "catalogues": {
+    "dataset-svprojects-0012": [
+      {
+        "Name": "0012_H_AO_H",
+        "Legacy Name": "0095_0001",
+        "Image Number": "0012",
+        "Sex": "Male",
+        "Age": "26.00",
+        "Species": "Human",
+        "Ethnicity": "-",
+        "Animal": "-",
+        "Anatomy": "Aorta",
+        "Disease": "Healthy",
+        "Procedure": "None",
+        "Images": "1",
+        "Paths": "1",
+        "Segmentations": "1",
+        "Models": "1",
+        "Meshes": "1",
+        "Simulations": "1",
+        "Notes": "Healthy aorta control group. See \\url(\"http://www.doi.org/10.1111/j.1747-0803.2011.00553.x\", \"paper\") for more details.",
+        "DOI": "10.1111/j.1747-0803.2011.00553.x",
+        "Citation": "Jr. LaDisa, J. F., Dholakia, R. J., Figueroa, C. A., Vignon-Clementel, I. E., Chan, F. P., Samyn, M. M., ... & Feinstein, J. A. (2011). Computational simulations demonstrate altered wall shear stress in aortic coarctation patients treated by resection with end-to-end anastomosis. Congenital heart disease, 6(5), 432-443.\nhttp://www.doi.org/10.1111/j.1747-0803.2011.00553.x",
+        "SDR DOI": "https://doi.org/10.25740/xm722vb1321",
+        "Image Manufacturer": "GE MEDICAL SYSTEMS",
+        "Image Type": "VTI",
+        "Image Source": "TLAB",
+        "Image Modality": "MR",
+        "Results": "1",
+        "Date Added": "27 Dec 2021",
+        "Order Uploaded": "12",
+        "Model Creator": "John F. LaDisa"
+      }
+    ],
+    "file_sizes-0012": [
+      {
+        "Name": "svprojects/0012_H_AO_H.zip",
+        "Size": "251303766"
+      },
+      {
+        "Name": "svresults/0012_H_AO_H/0012_H_AO_H_3D_RIGID_VTP.zip",
+        "Size": "413832983"
+      },
+      {
+        "Name": "svresults/0012_H_AO_H/0012_H_AO_H_3D_RIGID_VTU.zip",
+        "Size": "4187728393"
+      }
+    ],
+    "dataset-svresults-0012": [
+      {
+        "Model Name": "0012_H_AO_H",
+        "Full Simulation File Name": "0012_H_AO_H_3D_RIGID_VTP.zip",
+        "Model Image Number": "0012",
+        "Short Simulation File Name": "3D_RIGID_VTP",
+        "Legacy Simulation File Name": "0095_0001_vtp.zip",
+        "Simulation Fidelity": "3D",
+        "Simulation Method": "Rigid Wall",
+        "Simulation Condition": "-",
+        "Results Type": "Time-Resolved",
+        "Results File Type": "Surface (vtp)",
+        "Simulation Creator": "John F. LaDisa",
+        "Notes": "-"
+      },
+      {
+        "Model Name": "0012_H_AO_H",
+        "Full Simulation File Name": "0012_H_AO_H_3D_RIGID_VTU.zip",
+        "Model Image Number": "0012",
+        "Short Simulation File Name": "3D_RIGID_VTU",
+        "Legacy Simulation File Name": "0095_0001_vtu.zip",
+        "Simulation Fidelity": "3D",
+        "Simulation Method": "Rigid Wall",
+        "Simulation Condition": "-",
+        "Results Type": "Time-Resolved",
+        "Results File Type": "Volume (vtu)",
+        "Simulation Creator": "John F. LaDisa",
+        "Notes": "-"
+      }
+    ]
+  }
+}

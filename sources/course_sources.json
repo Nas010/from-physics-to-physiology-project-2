@@ -1,0 +1,47 @@
+[
+  {
+    "file": "sources/course/introduction.pptx",
+    "title": "0 slides introduction Ed+Simone 2026.pptx",
+    "canvas_course_id": 89400,
+    "canvas_file_id": 10768853,
+    "checked_on": "2026-10-08",
+    "canvas_updated_at": "2026-09-01T06:52:24Z",
+    "sha256": "0b5efcb5e93c437bf21fe6dd6086a73d15bb705790d4abe4595ec79eeab9b0f6"
+  },
+  {
+    "file": "sources/course/steady_flow.pptx",
+    "title": "1 circulation and steady flow slides.pptx",
+    "canvas_course_id": 89400,
+    "canvas_file_id": 10769792,
+    "checked_on": "2026-10-08",
+    "canvas_updated_at": "2026-08-31T09:34:57Z",
+    "sha256": "3b101066a8fbfce56e8a61fef61531a26a8785268f4f92c546e0323bd6123829"
+  },
+  {
+    "file": "sources/course/dynamic_circulation.pdf",
+    "title": "Content_class_2-Dynamic_circulation.pdf",
+    "canvas_course_id": 89400,
+    "canvas_file_id": 10782788,
+    "checked_on": "2026-10-08",
+    "canvas_updated_at": "2026-09-04T12:22:31Z",
+    "sha256": "8fac6f335be67406529a610692ac056779372acf530a84a4e443a2cdacc97faa"
+  },
+  {
+    "file": "sources/course/computational_haemodynamics.pdf",
+    "title": "Lecture_filled_computational_hemodynamics.pdf",
+    "canvas_course_id": 89400,
+    "canvas_file_id": 10917182,
+    "checked_on": "2026-10-08",
+    "canvas_updated_at": "2026-09-25T12:33:11Z",
+    "sha256": "789321cf8fc71857887dfece5df91fa7da94ee5414e6a0d34caf97d792c9a6dd"
+  },
+  {
+    "file": "sources/course/project_guidelines.pdf",
+    "title": "rules_projects_Simone.pdf",
+    "canvas_course_id": 89400,
+    "canvas_file_id": 10928253,
+    "checked_on": "2026-10-08",
+    "canvas_updated_at": "2026-09-28T07:07:21Z",
+    "sha256": "c3809ebb129d998c8bec5ad3f13465643a7f72e349140d5abac2cac8caee1acd"
+  }
+]

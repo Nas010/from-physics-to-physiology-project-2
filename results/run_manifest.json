@@ -1,0 +1,105 @@
+{
+  "sources": [
+    {
+      "file": "data/0012_H_AO_H/Models/0095_0001.vtp",
+      "sha256": "a616dae5f71b378cc4cd24ba0e4353d856013406f0313640d2ec9e126734b9b8"
+    },
+    {
+      "file": "data/0012_H_AO_H/Paths/aorta.pth",
+      "sha256": "9bdcc2cb479333a6dcbace2e0c332f36e50db92c1c31107a60f6e2faffaab43b"
+    },
+    {
+      "file": "data/0012_H_AO_H/Simulations/0095_0001/solver.inp",
+      "sha256": "3d3ddddfae8b5673f5a70b64943225fdc8a4aa44c424ccbaa46b1d0dea49e8fc"
+    },
+    {
+      "file": "data/0012_H_AO_H/Simulations/0095_0001/0095_0001.svpre",
+      "sha256": "c3ab423a6ea0bc5290fa66a5951ed8b03abd9733742f1819cc0d1d5a29425a81"
+    },
+    {
+      "file": "data/results/0012_H_AO_H_3D_RIGID.vtp",
+      "sha256": "a32480ba8a4836e03662228a65ede6879c6aace5905fb033ccc1fc7c30e7ec7e"
+    },
+    {
+      "file": "sources/FtP Project.pdf",
+      "sha256": "046507a2683a0988b79448ca2e49ac93527523f93d9990b465ffb5328e42b501"
+    },
+    {
+      "file": "sources/0012_H_AO_H.pdf",
+      "sha256": "c5da2c3a4bf5af7120141d9778b24d1843a18ea7db647a90014ebb2b78ce3887"
+    },
+    {
+      "file": "sources/VMTK, PyVista, Cardiovascular Modeling.md",
+      "sha256": "d8422db960963da15b565bd22824121a438a8bf674205b66fe27091abe08e434"
+    },
+    {
+      "file": "sources/FP2P_projects_Simone.pptx",
+      "sha256": "3b8f48e1a0d9dd9fcde40e2161b0c48365fb4782012ffb7b15ce74e3bcb03ef5"
+    },
+    {
+      "file": "data/actual_volume_sections.npz",
+      "sha256": "f54db1135454314e5248980cd470d911765f156fdfaa391e1a239a2f60c7f3a2"
+    }
+  ],
+  "python": "3.12.14",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "packages": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2",
+    "pyvista": "0.49.0",
+    "vtk": "9.6.2",
+    "vmtk": "1.5.2"
+  },
+  "parameters": {
+    "rho_kg_m3": 1060.0,
+    "mu_Pa_s": 0.004,
+    "period_s": 0.937,
+    "dt_s": 0.000937,
+    "spacing_m": 0.004,
+    "trim_m": 0.015,
+    "branch_exclusion_m": 0.018,
+    "low_flow_fraction": 0.05,
+    "thresholds": [
+      0.05,
+      0.1,
+      0.2
+    ]
+  },
+  "data_scope": "rigid healthy aorta; completed surface and downloaded volume sections",
+  "volume_source": {
+    "volume_sha256": "582877deefccb139c421355a2798b49ecc5c019a09b752ab72aacdf52278abac",
+    "model_sha256": "a616dae5f71b378cc4cd24ba0e4353d856013406f0313640d2ec9e126734b9b8",
+    "centerline_sha256": "21737e3c5340e4fc7005635328818c768334373257d384d62fd2097256d434f6",
+    "spacing_m": 0.004,
+    "trim_m": 0.015,
+    "branch_exclusion_m": 0.018,
+    "source_dt_s": 0.000937,
+    "period_s": 0.937,
+    "source_steps": [
+      10040,
+      11040,
+      5
+    ],
+    "units": {
+      "length": 0.01,
+      "velocity": 0.01,
+      "pressure": 0.1,
+      "shear": 0.1
+    },
+    "wall_probe_depth_m": 0.0003,
+    "kinematic_viscosity_m2_s": 3.7735849056603773e-06,
+    "source_url": "https://www.vascularmodel.com/svresults/0012_H_AO_H/0012_H_AO_H_3D_RIGID_VTU.zip"
+  },
+  "centerline_cache": {
+    "surface_sha256": "a616dae5f71b378cc4cd24ba0e4353d856013406f0313640d2ec9e126734b9b8",
+    "length_scale": 0.01,
+    "decimation": 0.8,
+    "smoothing_iterations": 30,
+    "smoothing_factor": 0.1,
+    "seed_method": "profileidlist"
+  },
+  "volume_enabled": true,
+  "compact_volume_sha256": "f54db1135454314e5248980cd470d911765f156fdfaa391e1a239a2f60c7f3a2"
+}
