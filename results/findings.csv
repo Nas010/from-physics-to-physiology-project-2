@@ -1,0 +1,5 @@
+quantity,value,units
+Maximum global mass mismatch,2.18162571082602e-05,% peak inlet flow
+Maximum local flow difference,0.3502820882624207,% peak inlet flow
+Poiseuille median residual,0.0455892087200296,relative to term scale
+Measured-closure median residual,0.011651619367562578,relative to term scale
