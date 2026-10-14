@@ -1,21 +1,143 @@
 {
-  "date": "2026-10-12",
-  "revision": "Shorter student notebook; healthy model allowed; supporting scripts included and referenced.",
-  "notebook_cells": 42,
-  "executed_code_cells": 21,
+  "date": "2026-10-14",
+  "revision": "Local figure audit and supported additions for the healthy aorta; five closure comparisons.",
+  "notebook_cells": 52,
+  "executed_code_cells": 26,
   "cell_errors": 0,
-  "entry_point": "main.py executed from /private/tmp with a fresh kernel; full run 46.94 seconds.",
-  "helper_checks": {
-    "date": "2026-10-12",
-    "checks_passed": 7,
-    "unchanged_function_asts": 17,
-    "runner_cleanup_check": "A tiny notebook executed through main.py, saved and exported; its kernel was confirmed closed.",
-    "bundle_python_syntax": "passed"
+  "entry_point": "main.py executed from /private/tmp with a fresh kernel; final run passed after plot-label fixes.",
+  "addition_checks": {
+    "checks_passed": 2,
+    "date": "2026-10-14",
+    "checks": [
+      "Mixed closures change exactly the intended convective and friction terms on a known triangulated case.",
+      "Saved flow numbers retain diameter/radius conventions; new CSVs retain section/time alignment, common masks, probe sample count, and six original CSV hashes."
+    ],
+    "last_saved_output_check": "passed after final plot-label update"
+  },
+  "pre_addition_source_audit": {
+    "date": "2026-10-14",
+    "input_and_script_hashes_verified": [
+      "data/0012_H_AO_H/Models/0095_0001.vtp",
+      "data/centerline_vmtk.vtp",
+      "data/results/0012_H_AO_H_3D_RIGID.vtp",
+      "data/actual_volume_sections.npz",
+      "aorta_functions.py",
+      "prepare_volume.py",
+      "main.py"
+    ],
+    "model": "0012_H_AO_H",
+    "legacy_name": "0095_0001",
+    "disease": "Healthy",
+    "geometry_export_matches_original": true,
+    "centreline_export_matches_source": true,
+    "cached_section_metric_comparisons": 42,
+    "cached_section_time_pairs": 9,
+    "raw_volume_reextracted": false,
+    "figures": [
+      {
+        "name": "aorta_geometry",
+        "code_cell": 4
+      },
+      {
+        "name": "cap_flows_and_mass",
+        "code_cell": 6
+      },
+      {
+        "name": "section_area_flow_pressure",
+        "code_cell": 8
+      },
+      {
+        "name": "local_mass_balance",
+        "code_cell": 9
+      },
+      {
+        "name": "womersley_check",
+        "code_cell": 10
+      },
+      {
+        "name": "aortic_velocity_profiles",
+        "code_cell": 11
+      },
+      {
+        "name": "section_pressure_velocity",
+        "code_cell": 12
+      },
+      {
+        "name": "pressure_and_profile_maps",
+        "code_cell": 13
+      },
+      {
+        "name": "profile_factor_comparison",
+        "code_cell": 14
+      },
+      {
+        "name": "friction_comparison",
+        "code_cell": 15
+      },
+      {
+        "name": "momentum_residual_maps",
+        "code_cell": 16
+      },
+      {
+        "name": "momentum_term_budget",
+        "code_cell": 17
+      },
+      {
+        "name": "wall_probe_sensitivity",
+        "code_cell": 19
+      }
+    ],
+    "momentum_arithmetic_and_normalization": "passed for every available point",
+    "residual_statistics": {
+      "poiseuille": {
+        "available_pairs": 8557,
+        "common_pairs": 2878,
+        "median": 0.0455892087200296,
+        "p95": 0.4957754132833684,
+        "maximum_displayed_data": 1.0,
+        "above_colour_limit_all_available": 1861,
+        "floor_active_pairs": 84
+      },
+      "zeta9": {
+        "available_pairs": 8557,
+        "common_pairs": 2878,
+        "median": 0.043616878106356796,
+        "p95": 0.45430820725247356,
+        "maximum_displayed_data": 1.0,
+        "above_colour_limit_all_available": 1825,
+        "floor_active_pairs": 68
+      },
+      "measured": {
+        "available_pairs": 2878,
+        "common_pairs": 2878,
+        "median": 0.011651619367562578,
+        "p95": 0.17511541417341386,
+        "maximum_displayed_data": 0.9024662346002399,
+        "above_colour_limit_all_available": 10,
+        "floor_active_pairs": 0
+      }
+    },
+    "residual_png_recreated_pixel_differences": 0,
+    "derivative_runs_mm": [
+      [
+        15.0,
+        38.999787740069486,
+        7
+      ],
+      [
+        102.99922171358811,
+        258.99784202403976,
+        40
+      ]
+    ],
+    "common_sample_frame_range": [
+      1,
+      199
+    ],
+    "reference_tube_radius_mm": 10
   },
   "numerical_output_comparison": {
-    "date": "2026-10-12",
-    "code_cells_executed": 21,
-    "cell_errors": 0,
+    "code_cells_executed": 26,
     "core_csv_files_identical": [
       "geometry.csv",
       "cap_flows_m3_s.csv",
@@ -30,27 +152,117 @@
       "measured"
     ],
     "common_valid_pairs": 2878,
-    "unused_extra_outputs_removed": true,
-    "main_entry_point_executed_from_another_directory": true
+    "closure_comparisons": 5,
+    "longest_code_cell_lines": 38
   },
   "rendering_checks": {
-    "date": "2026-10-12",
-    "html_code_cells": 21,
-    "html_images": 13,
-    "html_equations": 13,
     "broken_images": 0,
-    "math_errors": 0,
-    "introduction_and_script_table_inspected": true,
-    "figures_inspected": [
-      "section_pressure_velocity",
-      "aortic_velocity_profiles",
-      "momentum_residual_maps"
+    "headings": [
+      {
+        "id": "Project-2:-one-dimensional-flow-assumptions-in-a-healthy-aorta",
+        "text": "Project 2: one-dimensional flow assumptions in a healthy aorta\u00b6"
+      },
+      {
+        "id": "Introduction",
+        "text": "Introduction\u00b6"
+      },
+      {
+        "id": "Setup-and-supporting-files",
+        "text": "Setup and supporting files\u00b6"
+      },
+      {
+        "id": "Parameters-and-units",
+        "text": "Parameters and units\u00b6"
+      },
+      {
+        "id": "1.-Cross-sections,-flow-and-conservation",
+        "text": "1. Cross-sections, flow and conservation\u00b6"
+      },
+      {
+        "id": "Geometry-preview",
+        "text": "Geometry preview\u00b6"
+      },
+      {
+        "id": "Inlet-and-outlet-flow",
+        "text": "Inlet and outlet flow\u00b6"
+      },
+      {
+        "id": "Measurements-in-the-filled-sections",
+        "text": "Measurements in the filled sections\u00b6"
+      },
+      {
+        "id": "Reynolds-and-Womersley-numbers",
+        "text": "Reynolds and Womersley numbers\u00b6"
+      },
+      {
+        "id": "Womersley-check",
+        "text": "Womersley check\u00b6"
+      },
+      {
+        "id": "Velocity-profiles-in-the-aorta",
+        "text": "Velocity profiles in the aorta\u00b6"
+      },
+      {
+        "id": "2.-Pressure,-profile-shape-and-friction",
+        "text": "2. Pressure, profile shape and friction\u00b6"
+      },
+      {
+        "id": "Changes-along-the-vessel-and-cycle",
+        "text": "Changes along the vessel and cycle\u00b6"
+      },
+      {
+        "id": "Reference-profiles",
+        "text": "Reference profiles\u00b6"
+      },
+      {
+        "id": "Wall-friction",
+        "text": "Wall friction\u00b6"
+      },
+      {
+        "id": "Profile-shape-and-friction-along-the-vessel",
+        "text": "Profile shape and friction along the vessel\u00b6"
+      },
+      {
+        "id": "3.-The-one-dimensional-momentum-balance",
+        "text": "3. The one-dimensional momentum balance\u00b6"
+      },
+      {
+        "id": "Comparing-residuals-fairly",
+        "text": "Comparing residuals fairly\u00b6"
+      },
+      {
+        "id": "Residual-over-the-cycle",
+        "text": "Residual over the cycle\u00b6"
+      },
+      {
+        "id": "Residual-and-curvature",
+        "text": "Residual and curvature\u00b6"
+      },
+      {
+        "id": "A-small-sensitivity-check",
+        "text": "A small sensitivity check\u00b6"
+      },
+      {
+        "id": "Probe-sensitivity-across-all-usable-sections",
+        "text": "Probe sensitivity across all usable sections\u00b6"
+      },
+      {
+        "id": "Findings-and-limitations",
+        "text": "Findings and limitations\u00b6"
+      },
+      {
+        "id": "Saved-files-and-ParaView",
+        "text": "Saved files and ParaView\u00b6"
+      },
+      {
+        "id": "References",
+        "text": "References\u00b6"
+      }
     ],
-    "vtp_exports_read_back": [
-      "aorta_wall",
-      "main_centerline",
-      "example_section"
-    ]
+    "html_code_cells": 26,
+    "html_images": 18,
+    "math_errors": 0,
+    "rendered_equations": 26
   },
   "source_snapshots": 201,
   "eligible_volume_stations": 47,
@@ -64,7 +276,7 @@
     "checked_on_canvas": "2026-10-08",
     "bundled_hashes_verified_this_revision": true
   },
-  "paraview": "Script syntax and VTP readback passed; native ParaView not run (not installed).",
+  "paraview": "Script syntax passed; VTP readback checked on 12 October. Native ParaView not run.",
   "raw_volume_preparation": "Interpolation checked; complete 5.55 GB volume extraction not repeated.",
   "scope_limits": [
     "Healthy rigid model with one available cycle.",

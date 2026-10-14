@@ -520,7 +520,7 @@ def analyse_sections(cache, s, tangents, rho, nu, export, low_fraction=0.05):
     )
     fields["pressure_axial_ratio"] = np.full(shape, np.nan)
 
-    # Prepare separate term arrays for the three closure comparisons.
+    # Prepare separate term arrays for the five closure comparisons.
     termsets = {
         name: {
             key: np.full(shape, np.nan)
@@ -538,6 +538,8 @@ def analyse_sections(cache, s, tangents, rho, nu, export, low_fraction=0.05):
             "poiseuille",
             "zeta9",
             "measured",
+            "measured_alpha_poiseuille_f",
+            "poiseuille_alpha_measured_f",
         ]
     }
 
@@ -558,6 +560,8 @@ def analyse_sections(cache, s, tangents, rho, nu, export, low_fraction=0.05):
             ("poiseuille", 4 / 3, 8 * np.pi * nu * Q / A),
             ("zeta9", 1.1, 22 * np.pi * nu * Q / A),
             ("measured", fields["alpha"], fields["f_measured"]),
+            ("measured_alpha_poiseuille_f", fields["alpha"], 8 * np.pi * nu * Q / A),
+            ("poiseuille_alpha_measured_f", 4 / 3, fields["f_measured"]),
         ]:
             a = alpha if np.isscalar(alpha) else alpha[:, run]
             terms = balance_terms(

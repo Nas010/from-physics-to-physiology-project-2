@@ -2,6 +2,18 @@
 
 Open `FtP_Aorta_1D_Assumptions.ipynb` for the analysis, or `notebook.html` to read the saved results without Python. Keep `assets/` beside the HTML so the equations work offline.
 
+## Where to find the presentation material
+
+- [Figure guide](FIGURE_GUIDE.md) explains all 18 figures, their axes, actual versus reference data, residuals, missing regions and conclusions supported by the results.
+- [Executed notebook](FtP_Aorta_1D_Assumptions.ipynb) contains the calculations, equations, saved plots and tables. GitHub can display its saved outputs. Download [notebook.html](notebook.html) with `assets/` for an offline preview.
+- [Figures for the slides](results/figures/) contains PNG and SVG versions. Use PNG to insert a figure into PowerPoint, or SVG for scalable artwork.
+- [Closure comparison table](results/closure_residual_statistics.csv) gives five closures on the same 2,878 valid section–time pairs.
+- [Speaker notes, timings and discussion guide](presentation/Speaker_Notes_and_Course_Guide.md) accompanies the existing [PowerPoint](presentation/FtP_Project2_Aorta_Presentation.pptx).
+
+The 14 October notebook update adds Reynolds/Womersley numbers, residual versus curvature, the ζ = 9 residual panel, vessel-wide α/friction comparisons, Womersley overlays on actual profiles, the axial-pressure ratio, two mixed closures, matched cycle summaries and all-section probe sensitivity. The existing PowerPoint predates these additions; use the new figures and figure guide when updating its slides and conclusions.
+
+The actual simulation figures use the chosen healthy aorta, **0012_H_AO_H**. The standalone Womersley plot is an analytical straight-tube check. White map regions mean excluded calculations. The curvature comparison does not establish a consistent increasing trend across closures. Arch/Dean vectors are omitted because the prepared usable sections exclude that region.
+
 The notebook uses the allowed healthy aorta model, 0012_H_AO_H. It follows the three core Project 2 tasks:
 
 1. Measure area, flow, mean pressure and velocity profiles in actual 3D sections; check conservation and a Womersley reference.
