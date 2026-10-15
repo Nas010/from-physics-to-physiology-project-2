@@ -928,3 +928,66 @@ def save_run_info(project_folder, parameters, volume_metadata):
         "study_scope": "healthy rigid aorta; approved healthy-model scope",
     }
     (root / "results" / "run_manifest.json").write_text(json.dumps(record, indent=2))
+
+
+def plot_alpha_time(history, distance_m, low_fraction=0.05):
+    """Plot the existing measured alpha against seconds, retaining masked gaps."""
+    import matplotlib.pyplot as plt
+
+    time = history["time_s"].to_numpy()
+    alpha = history["alpha"].to_numpy()
+    flow = history["Q"].to_numpy()
+    low = np.abs(flow) < low_fraction * np.max(np.abs(flow))
+    frames = [int(np.argmax(flow)), len(history) // 4, 3 * (len(history) - 1) // 10]
+    points = history.iloc[frames]
+    ymax = max(6.3, np.nanmax(alpha) * 1.05)
+
+    with plt.rc_context({"font.family": "Arial", "font.size": 14}):
+        fig, ax = plt.subplots(figsize=(10.4, 5.3))
+        ax.fill_between(
+            time,
+            0,
+            1,
+            where=low,
+            step="mid",
+            transform=ax.get_xaxis_transform(),
+            color="#EFF2F4",
+            zorder=0,
+        )
+        ax.plot(time, alpha, color="#2166A8", lw=2.8, label="Measured α")
+        ax.axhline(4 / 3, color="#D57A19", ls="--", lw=1.8, label="Poiseuille α = 1.33")
+        ax.scatter(points.time_s, points.alpha, color="#2166A8", s=42, zorder=4)
+        label_positions = [(0.025, 1.85), (0.34, 1.95), (0.34, 3.85)]
+        for (_, row), position in zip(points.iterrows(), label_positions):
+            ax.annotate(
+                f"α = {row.alpha:.2f}\nt = {row.time_s:.3f} s",
+                xy=(row.time_s, row.alpha),
+                xytext=position,
+                fontsize=12,
+                color="#16446A",
+                arrowprops={"arrowstyle": "-", "color": "#66717C", "lw": 0.8},
+            )
+        if np.any(low):
+            ax.text(
+                0.65 * time[-1],
+                0.75 * ymax,
+                f"Low net flow\nα omitted below {100 * low_fraction:g}%\nof local peak |Q|",
+                ha="center",
+                va="center",
+                color="#66717C",
+                fontsize=13,
+            )
+        ax.set(
+            xlim=(0, time[-1]),
+            ylim=(0.85, ymax),
+            xlabel="Time within the cycle (s)",
+            ylabel="Momentum coefficient α",
+            title=f"Measured α over time at s = {distance_m * 1000:.0f} mm",
+        )
+        ticks = [0, 0.2, 0.4, 0.6, 0.8, time[-1]]
+        ax.set_xticks(ticks, ["0", "0.2", "0.4", "0.6", "0.8", f"{time[-1]:.3f}"])
+        ax.set_yticks(np.arange(1, int(ymax) + 1))
+        ax.spines[["top", "right"]].set_visible(False)
+        ax.grid(axis="y", color="#D7DEE4", alpha=0.7, zorder=0)
+        ax.legend(loc="upper right", frameon=False, fontsize=12)
+        return fig, ax

@@ -1,4 +1,4 @@
-# Figure guide — healthy aorta, 14 October 2026
+# Figure guide — healthy aorta, 15 October 2026
 
 All anatomy and actual simulation fields in this notebook belong to **0012_H_AO_H**, the selected healthy rigid aorta. The internal file name **0095_0001** is its legacy identifier. The public [model catalogue](https://www.vascularmodel.com/dataset/dataset-svprojects.csv) and [results catalogue](https://www.vascularmodel.com/dataset/dataset-svresults.csv) identify the same case. Healthy describes the supplied anatomy; it does not imply a straight vessel, a parabolic velocity profile or negligible secondary flow.
 
@@ -70,15 +70,23 @@ Pressure ratios and α are masked below **5% of that section's peak absolute net
 
 [Open figure](results/figures/profile_factor_comparison.png). This plots α over the cycle for the actual section, fixed Poiseuille α = 4/3, fixed ζ = 9 α = 1.1 and the local Womersley reference. The real peak-flow profile is relatively blunt, near the ζ = 9 value. Later low-net-flow phases do not have a displayed measured α. The Womersley curve uses the same bulk-flow history but assumes a straight circular tube, so agreement in α does not establish agreement in every local velocity.
 
-### 11. Friction comparison at 199 mm — Comparison
+### 11. Alpha versus time at 199 mm — Actual derived metric
+
+[Open annotated figure](results/figures/alpha_vs_time.png). This presentation view plots the same measured momentum coefficient against **time in seconds**, on a **linear y-axis**. It includes the constant Poiseuille reference, α = 4/3. The annotations mark α = **1.06 at 0.0937 s**, **1.20 at 0.23425 s**, and **3.60 at 0.28110 s**. The correction varies in time at this location. A constant α remains a possible approximation, but it does not reproduce all measured values exactly. The graph does not determine the best constant for a complete 1D model.
+
+The grey region marks the existing low-flow exclusion. Of 201 samples, 68 have displayed α and 133 are masked, from 0.290470 to 0.908890 s. No interpolation joins the blue curve across that gap. Since α = A ∫u_s² dA / Q², small net flow can make the ratio large even when local forward and reverse velocities remain appreciable. Read the final rise with that denominator in mind. It does not itself establish secondary flow, turbulence or disease. This graph shows **temporal** variation at one section. The figure along the vessel addresses **spatial** variation at one common time.
+
+The notebook regenerates this plot and exports [its 201 source rows](results/alpha_vs_time.csv). [Dutch speaking explanation](ALPHA_VS_TIME_NL.md) is available for the presentation.
+
+### 12. Friction comparison at 199 mm — Comparison
 
 [Open figure](results/figures/friction_comparison.png). Signed f in m³/s² is plotted over the cycle. References use `f = 8πνQ/A` for Poiseuille, `f = 22πνQ/A` for ζ = 9, and the unsteady local Womersley solution. The actual curve is estimated from near-wall probes. A pulsatile near-wall velocity gradient can differ in magnitude or sign from a steady law based on instantaneous bulk flow. Treat differences as closure/probe differences, not a direct measurement of clinical wall stress.
 
-### 12. Profile factor and friction along the vessel — Comparison
+### 13. Profile factor and friction along the vessel — Comparison
 
 [Open figure](results/figures/profile_and_friction_along_vessel.png). This repeats the α and f comparisons spatially at one common peak-flow time, over every usable station. A vertical marker identifies the 199 mm example. In the downstream run, measured α is approximately 1.06–1.09, close to the blunt ζ = 9 reference; proximal values are higher. Measured downstream friction exceeds both steady references at this time. The example reflects the downstream profile reasonably at this snapshot, while its friction does not describe all stations. This plot covers the available runs, not the excluded arch/branch region and not every station's separate local peak time.
 
-### 13. Normalised momentum residual maps — Actual data with three closures
+### 14. Normalised momentum residual maps — Actual data with three closures
 
 [Open figure](results/figures/momentum_residual_maps.png). **Poiseuille is the first title; “PSI” is not a pressure unit used here.** All three panels use exactly the same actual A, Q and mean P from this aorta. They change the momentum-profile correction α and friction f:
 
@@ -112,23 +120,23 @@ For a fair comparison, the table below uses the **same 2,878 valid pairs for all
 
 Using both measured quantities reduces the median residual on matched samples. Changing only one does not improve the median here, although it changes the upper tail. The effects cannot be added independently: signed terms cancel and the normalisation changes with the terms. These results do not justify a single universal ranking of “α matters more” or “friction matters more.” Measured quantities come from the same simulation used to form the balance, so a smaller residual shows greater computational consistency, not independent validation of a predictive 1D model.
 
-### 14. Momentum-term budget — Derived from actual fields
+### 15. Momentum-term budget — Derived from actual fields
 
 [Open figure](results/figures/momentum_term_budget.png). At 199 mm, this plots the signed unsteady, convective, pressure and measured-friction terms against cycle fraction, with the resulting residual. The vertical units are m³/s². Individual terms can be large while their sum is small. Measured α masking makes the convective term and resulting residual unavailable at some times; other available terms can still be shown. This plot explains the balance behind the colour map.
 
-### 15. Residual over the cycle — Five-closure comparison
+### 16. Residual over the cycle — Five-closure comparison
 
 [Open figure](results/figures/residual_over_cycle.png). The upper panel takes the median residual across the same available locations for all five closures at each time. The lower panel shows how many locations contribute. The locations can change between times, so a temporal change is not exclusively a change in flow physics. No curve is drawn where the common count is zero. The broad gap reflects measured-α masking; it does not mean the reference closures lack data there. The spike near cycle fraction 0.32 coincides with rapidly shrinking common coverage and should be read with the count panel.
 
-### 16. Residual versus centreline curvature — Spatial comparison
+### 17. Residual versus centreline curvature — Spatial comparison
 
 [Open figure](results/figures/curvature_residual_comparison.png). Each point is one of **43 paired locations** at the same selected peak-flow time. The horizontal axis is curvature in 1/m and the vertical axis is the unclipped normalised residual. The three colours use the three main closures on those same locations. No consistent increasing trend appears across all closures: Spearman correlations are about −0.076, 0.170 and 0.254 for Poiseuille, ζ = 9 and measured respectively. These are descriptive values, not independent statistical samples or causal evidence. The excluded branch region contains important curvature and limits conclusions about the arch. Present this as a test of the curvature hypothesis, not confirmation that bending explains the residual.
 
-### 17. Near-wall sampling sensitivity at 199 mm — Numerical sensitivity
+### 18. Near-wall sampling sensitivity at 199 mm — Numerical sensitivity
 
 [Open figure](results/figures/wall_probe_sensitivity.png). Two signed f estimates use velocity probes 0.30 and 0.15 mm from the wall. Their difference over the cycle shows sensitivity to the sampled near-wall gradient. Close agreement supports stability with respect to these two probe depths at this section; it does not establish the true wall force, spatial mesh convergence or accuracy everywhere.
 
-### 18. Probe sensitivity across all usable sections — Numerical sensitivity
+### 19. Probe sensitivity across all usable sections — Numerical sensitivity
 
 [Open figure](results/figures/probe_sensitivity_all_sections.png). The histogram contains **9,447 section–time samples**: 47 stations × 201 snapshots. The horizontal axis is `100 |f_0.15 − f_0.30| / max_cycle |f_0.30|`, with a separate peak-force denominator for each station. This avoids dividing by a force close to zero at an individual time. The median is **0.274%** and the 95th percentile **5.19%**; the largest difference is **50.69%** of the relevant section's peak force. Most differences are small, with a local tail that should not be hidden by the median. Samples are correlated in space/time, and this is a sensitivity measure, not independent accuracy.
 
@@ -140,6 +148,6 @@ An arch quiver plot was not added: the prepared usable sections omit that region
 
 ## Where the calculations and evidence live
 
-The notebook contains the short calculations and figure cells. `aorta_functions.py` implements the section integrals, reference profiles, five closure combinations and `balance_terms()` normalisation. `results/` contains full CSV values; `results/figures/` contains all 18 plots as PNG and SVG. `results/validation.md` records the completed checks and their dates.
+The notebook contains the short calculations and figure cells. `aorta_functions.py` implements the section integrals, reference profiles, five closure combinations and `balance_terms()` normalisation. `results/` contains full CSV values; `results/figures/` contains all 19 plots as PNG and SVG. `results/validation.md` records the completed checks and their dates.
 
-The 14 October audit matched model/source identifiers and geometry, checked 42 finite metrics by independent triangle integration on nine cached section–time pairs, and reconstructed the original residual arithmetic and figure. The update ran all 26 notebook code cells with no errors. The six original core CSVs remain byte-for-byte identical, while regression checks verify the new flow-number conventions, mixed terms and matched samples. Full extraction from the 5.55 GB raw volume was not repeated. These checks establish provenance and computational consistency; they do not establish physiological accuracy or mesh convergence.
+The 14 October audit matched model/source identifiers and geometry, checked 42 finite metrics by independent triangle integration on nine cached section–time pairs, and reconstructed the original residual arithmetic and figure. The 15 October alpha-graph update ran all 27 notebook code cells with no errors. The six original core CSVs remain byte-for-byte identical, while regression checks verify the new flow-number conventions, mixed terms and matched samples. Full extraction from the 5.55 GB raw volume was not repeated. These checks establish provenance and computational consistency; they do not establish physiological accuracy or mesh convergence.

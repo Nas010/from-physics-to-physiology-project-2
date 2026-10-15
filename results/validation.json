@@ -1,10 +1,10 @@
 {
-  "date": "2026-10-14",
-  "revision": "Local figure audit and supported additions for the healthy aorta; five closure comparisons.",
-  "notebook_cells": 52,
-  "executed_code_cells": 26,
+  "date": "2026-10-15",
+  "revision": "Annotated alpha-versus-time graph and explanation added to the notebook.",
+  "notebook_cells": 55,
+  "executed_code_cells": 27,
   "cell_errors": 0,
-  "entry_point": "main.py executed from /private/tmp with a fresh kernel; final run passed after plot-label fixes.",
+  "entry_point": "main.py executed all 27 code cells from /private/tmp in a fresh kernel on 15 October.",
   "addition_checks": {
     "checks_passed": 2,
     "date": "2026-10-14",
@@ -137,7 +137,7 @@
     "reference_tube_radius_mm": 10
   },
   "numerical_output_comparison": {
-    "code_cells_executed": 26,
+    "code_cells_executed": 27,
     "core_csv_files_identical": [
       "geometry.csv",
       "cap_flows_m3_s.csv",
@@ -156,6 +156,35 @@
     "longest_code_cell_lines": 38
   },
   "rendering_checks": {
+    "date": "2026-10-15",
+    "html_code_cells": 27,
+    "html_images": 19,
+    "embedded_pngs_decoded_and_verified": 19,
+    "new_saved_plot_inspected": true,
+    "new_svg_well_formed": true,
+    "fresh_live_browser_mathjax_check": false
+  },
+  "source_snapshots": 201,
+  "eligible_volume_stations": 47,
+  "direct_raw_vtu_metric_comparisons": {
+    "passed": 45,
+    "date": "2026-10-06",
+    "rerun_this_revision": false
+  },
+  "teaching_sources": {
+    "files": 5,
+    "checked_on_canvas": "2026-10-08",
+    "bundled_hashes_verified_this_revision": true
+  },
+  "paraview": "Script syntax passed; VTP readback checked on 12 October. Native ParaView not run.",
+  "raw_volume_preparation": "Interpolation checked; complete 5.55 GB volume extraction not repeated.",
+  "scope_limits": [
+    "Healthy rigid model with one available cycle.",
+    "Near-wall probe force and numerical derivatives are approximate.",
+    "These checks do not establish physiological accuracy or mesh convergence."
+  ],
+  "previous_live_browser_rendering_checks": {
+    "date": "2026-10-14",
     "broken_images": 0,
     "headings": [
       {
@@ -264,23 +293,29 @@
     "math_errors": 0,
     "rendered_equations": 26
   },
-  "source_snapshots": 201,
-  "eligible_volume_stations": 47,
-  "direct_raw_vtu_metric_comparisons": {
-    "passed": 45,
-    "date": "2026-10-06",
-    "rerun_this_revision": false
-  },
-  "teaching_sources": {
-    "files": 5,
-    "checked_on_canvas": "2026-10-08",
-    "bundled_hashes_verified_this_revision": true
-  },
-  "paraview": "Script syntax passed; VTP readback checked on 12 October. Native ParaView not run.",
-  "raw_volume_preparation": "Interpolation checked; complete 5.55 GB volume extraction not repeated.",
-  "scope_limits": [
-    "Healthy rigid model with one available cycle.",
-    "Near-wall probe force and numerical derivatives are approximate.",
-    "These checks do not establish physiological accuracy or mesh convergence."
-  ]
+  "new_alpha_time_checks": {
+    "date": "2026-10-15",
+    "notebook_cells": 55,
+    "executed_code_cells": 27,
+    "cell_errors": 0,
+    "original_cell_sources_preserved": 52,
+    "original_helper_functions_unchanged": 22,
+    "core_csv_files_identical": [
+      "geometry.csv",
+      "cap_flows_m3_s.csv",
+      "actual_volume_section_metrics.csv",
+      "actual_volume_momentum_poiseuille.csv",
+      "actual_volume_momentum_zeta9.csv",
+      "actual_volume_momentum_measured.csv"
+    ],
+    "new_curve_samples": 201,
+    "finite_alpha_values": 68,
+    "masked_alpha_values": 133,
+    "annotated_values_checked": 3,
+    "maximum_time_alignment_error_s": 2.220446049250313e-15,
+    "html_code_cells": 27,
+    "html_embedded_pngs_verified": 19,
+    "new_svg_well_formed": true,
+    "live_browser_mathjax_rechecked": false
+  }
 }
